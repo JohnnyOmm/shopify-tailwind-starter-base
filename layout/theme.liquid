@@ -46,11 +46,10 @@
     {{ content_for_header }}
 
     {%- liquid
-       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-     %}
-    {% section 'announcement-bar-trellis' %}
+        assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+        assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+        assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+      %}
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -64,32 +63,43 @@
           : root, {%- endif %}
         .color-{{ scheme.id }}{
           --color-background: 
-          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }};
+          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }}
+          ;
           {% if scheme.settings.background_gradient != empty %}
             --gradient-background: {{ scheme.settings.background_gradient }};
           {% else %}
             --gradient-background: {{ scheme.settings.background }};
           {% endif %}
           --color-foreground: 
-          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }};
+          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }}
+          ;
           --color-shadow: 
-          {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }}, {{ scheme.settings.shadow.blue }};
+          {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }}, {{ scheme.settings.shadow.blue }}
+          ;
           --color-button: 
-          {{ scheme.settings.button.red }},{{ scheme.settings.button.green }}, {{ scheme.settings.button.blue }};
+          {{ scheme.settings.button.red }},{{ scheme.settings.button.green }}, {{ scheme.settings.button.blue }}
+          ;
           --color-button-text: 
-          {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }}, {{ scheme.settings.button_label.blue }};
+          {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }}, {{ scheme.settings.button_label.blue }}
+          ;
           --color-secondary-button: 
-          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }};
+          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }}
+          ;
           --color-secondary-button-text: 
-          {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }}, {{ scheme.settings.secondary_button_label.blue }};
+          {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }}, {{ scheme.settings.secondary_button_label.blue }}
+          ;
           --color-link: 
-          {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }}, {{ scheme.settings.secondary_button_label.blue }};
+          {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }}, {{ scheme.settings.secondary_button_label.blue }}
+          ;
           --color-badge-foreground: 
-          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }};
+          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }}
+          ;
           --color-badge-background: 
-          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }};
+          {{ scheme.settings.background.red }},{{ scheme.settings.background.green }}, {{ scheme.settings.background.blue }}
+          ;
           --color-badge-border: 
-          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }};
+          {{ scheme.settings.text.red }},{{ scheme.settings.text.green }}, {{ scheme.settings.text.blue }}
+          ;
           --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
         }
       {% endfor %}
@@ -192,8 +202,10 @@
 
           --spacing-sections-desktop: {{ settings.spacing_sections }}px;
           --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}
-            {{ settings.spacing_sections }}{% else %}
-            {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+            {{ settings.spacing_sections }}
+          {% else %}
+            {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}
+          {% endif %}px;
 
           --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
           --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
@@ -213,10 +225,12 @@
 
           --buttons-radius: {{ settings.buttons_radius }}px;
           --buttons-radius-outset: {% if settings.buttons_radius > 0 %}
-            {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}
+            {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}
+          {% else %}
             0{% endif %}px;
           --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}
-            {{ settings.buttons_border_thickness }}{% else %}
+            {{ settings.buttons_border_thickness }}
+          {% else %}
             0{% endif %}px;
           --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
           --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
@@ -236,12 +250,14 @@
           --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
           --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
           --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}
-            {{ settings.inputs_shadow_vertical_offset | abs }}{% else %}
+            {{ settings.inputs_shadow_vertical_offset | abs }}
+          {% else %}
             0{% endif %}px;
           --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
           --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
           --inputs-radius-outset: {% if settings.inputs_radius > 0 %}
-            {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}
+            {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}
+          {% else %}
             0{% endif %}px;
 
           --variant-pills-radius: {{ settings.variant_pills_radius }}px;
