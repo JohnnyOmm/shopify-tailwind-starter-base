@@ -2,6 +2,24 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "announcement-bar-trellis": {
+      "type": "announcement-bar-trellis",
+      "blocks": {
+        "announcement-bar-trellis-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Buy 2 Get 1 Free - Flash Sale!",
+            "color_scheme": "inverse",
+            "link": "https:\/\/limitrun.com\/pages\/wonderbag"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-trellis-0"
+      ],
+      "settings": {
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -15,29 +33,6 @@
       },
       "block_order": [
         "announcement-bar-0"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5
-      }
-    },
-    "announcement-bar-trellis": {
-      "type": "announcement-bar-trellis",
-      "blocks": {
-        "announcement-bar-trellis-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Buy 2 Get 1 Free - Flash Sale!",
-            "color_scheme": "background-1",
-            "link": "https://limitrun.com/pages/wonderbag"
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-trellis-0"
       ],
       "settings": {
         "color_scheme": "",
