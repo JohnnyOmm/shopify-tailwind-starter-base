@@ -493,6 +493,73 @@
         "name": "Announcement bar"
       }
     },
+    "announcement-bar-trellis": {
+      "name": "Announcement bar Trellis",
+      "settings": {
+        "auto_rotate": {
+          "label": "Auto-rotate announcements"
+        },
+        "change_slides_speed": {
+          "label": "Change slides every"
+        },
+        "header__1": {
+          "content": "Social media icons",
+          "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
+        },
+        "header__2": {
+          "content": "Announcements"
+        },
+        "show_social": {
+          "label": "Show icons on desktop"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "color_scheme": {
+              "label": "Color scheme",
+              "options__1": {
+                "label": "Background 1"
+              },
+              "options__2": {
+                "label": "Background 2"
+              },
+              "options__3": {
+                "label": "Inverse"
+              },
+              "options__4": {
+                "label": "Accent 1"
+              },
+              "options__5": {
+                "label": "Accent 2"
+              }
+            },
+            "text_alignment": {
+              "label": "Text alignment",
+              "options__1": {
+                "label": "Left"
+              },
+              "options__2": {
+                "label": "Center"
+              },
+              "options__3": {
+                "label": "Right"
+              }
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Announcement bar"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {
