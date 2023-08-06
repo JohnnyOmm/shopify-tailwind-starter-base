@@ -9,36 +9,12 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our my dika",
-            "text_alignment": "center",
-            "color_scheme": "background-1",
             "link": ""
           }
         }
       },
       "block_order": [
         "announcement-bar-0"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5
-      }
-    },
-    "8b7e2fad-f0df-4b57-8186-a72c25b3326b": {
-      "type": "announcement-bar",
-      "blocks": {
-        "824a5fac-cf28-4b70-9ce4-97c56ab085a9": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "824a5fac-cf28-4b70-9ce4-97c56ab085a9"
       ],
       "settings": {
         "color_scheme": "",
@@ -69,7 +45,6 @@
   },
   "order": [
     "announcement-bar",
-    "8b7e2fad-f0df-4b57-8186-a72c25b3326b",
     "header"
   ]
 }
