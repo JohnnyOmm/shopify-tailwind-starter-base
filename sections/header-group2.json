@@ -22,8 +22,10 @@
     },
     "header2": {
       "type": "header2",
+      "custom_css": [
+        "limitedrunhoriz {height: 10px;}"
+      ],
       "settings": {
-        "logo_position": "top-center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
@@ -43,5 +45,4 @@
     "announcement-bar-trellis",
     "header2"
   ]
-  
 }
