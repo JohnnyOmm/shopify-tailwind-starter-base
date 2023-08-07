@@ -46,10 +46,10 @@
     {{ content_for_header }}
 
     {%- liquid
-                     assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-                     assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-                     assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-                   %}
+                      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+                      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+                      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+                    %}
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -335,7 +335,7 @@
 
     {% if page.url contains 'wonderbag' %}
       {% sections 'header-group2' %}
-      <img src="limitedruneye.jpg">
+      <img src="/assets/limitedruneye.jpg">
     {% else %}
       {% sections 'header-group' %}
     {% endif %}
