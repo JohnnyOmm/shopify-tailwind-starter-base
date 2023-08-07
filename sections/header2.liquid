@@ -184,7 +184,7 @@
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ result.png | image_url: width: 600 | image_tag:
+                {{ /result.png | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo motion-reduce',
                   widths: widths,
                   height: logo_height,
@@ -224,7 +224,7 @@
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ result.png | image_url: width: 600 | image_tag:
+                {{ /result.png | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo',
                   widths: widths,
                   height: logo_height,
@@ -469,7 +469,7 @@
     "@type": "Organization",
     "name": {{ shop.name | json }},
     {% if settings.logo %}
-      "logo": {{ result.png | image_url: width: 500 | prepend: "https:" | json }},
+      "logo": {{ /result.png | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},
