@@ -138,15 +138,31 @@
         }
       }
     },
-    "logo": {
-      "name": "Logo",
+    "logo1": {
+      "name": "Logo1",
       "settings": {
         "logo_image": {
-          "label": "Logo"
+          "label": "Logo1"
         },
         "logo_width": {
-          "label": "Desktop logo width",
-          "info": "Logo width is automatically optimized for mobile."
+          "label": "Desktop logo1 width",
+          "info": "Logo1 width is automatically optimized for mobile."
+        },
+        "favicon": {
+          "label": "Favicon image",
+          "info": "Will be scaled down to 32 x 32px"
+        }
+      }
+    },
+    "logo2": {
+      "name": "Logo2",
+      "settings": {
+        "logo_image": {
+          "label": "Logo2"
+        },
+        "logo_width": {
+          "label": "Desktop logo2 width",
+          "info": "Logo2 width is automatically optimized for mobile."
         },
         "favicon": {
           "label": "Favicon image",
