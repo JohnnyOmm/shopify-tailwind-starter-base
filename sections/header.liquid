@@ -172,7 +172,7 @@
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
-
+    <img {{ 'limitedrunhoriz.jpg' | asset_url | img_tag: 'The 100% Satisfaction icon' }}/>
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
