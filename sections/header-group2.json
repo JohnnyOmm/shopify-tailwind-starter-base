@@ -21,7 +21,7 @@
       }
     },
     "header2": {
-      "type": "header",
+      "type": "header2",
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
