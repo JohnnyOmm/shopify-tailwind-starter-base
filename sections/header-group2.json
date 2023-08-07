@@ -43,7 +43,7 @@
       }
     },
     "header": {
-      "type": "header2",
+      "type": "header",
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
