@@ -169,7 +169,7 @@
       endif
     -%}
 
-    <img src="result.png">
+    <img src="{{ 'result.png' | assets_url: '60x60' }}" /> 
 
     {%- liquid
       if section.settings.menu != blank
