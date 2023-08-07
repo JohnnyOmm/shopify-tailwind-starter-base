@@ -2428,6 +2428,16 @@ product-info .loading-overlay:not(.hidden) ~ *,
   display: inline-block;
   transition: width 0.3s cubic-bezier(0.52, 0, 0.61, 0.99);
 }
+.header__heading-logo2 {
+  height: auto;
+  max-width: 100%;
+}
+
+.header__heading-logo2-wrapper {
+  width: 100%;
+  display: inline-block;
+  transition: width 0.3s cubic-bezier(0.52, 0, 0.61, 0.99);
+}
 
 @media screen and (max-width: 989px) {
   .header__heading,
