@@ -159,7 +159,7 @@
     endif
   -%}
   <header class="page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    <img {{ 'limitedrunhorizs.jpg' | asset_url | img_tag: 'The 100% Satisfaction icon' }}>
+    <img {{ 'limitedrunhoriz.jpg' | asset_url | img_tag: 'The 100% Satisfaction icon' }}>
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
