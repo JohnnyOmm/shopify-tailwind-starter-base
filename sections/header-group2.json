@@ -63,7 +63,6 @@
   },
   "order": [
     "announcement-bar-trellis",
-    "announcement-bar",
     "header2"
   ]
 }
