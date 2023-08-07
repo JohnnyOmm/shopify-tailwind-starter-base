@@ -167,12 +167,11 @@
       if section.settings.menu != blank
         render 'header-drawer'
       endif
-      {{ 'limitedrunhoriz.jpg' | asset_url | img_tag: 'limitedrunhoriz', 'css--class1 css--class2'}}
+      {{ 'limitedrunhoriz.jpg' | asset_url | img_tag: 'limitedrunhoriz', 'css--class1 limitedrunhoriz'}}
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
-    <img {{ 'limitedruneye.jpg' | asset_url | img_tag: 'The 100% Satisfaction icon' }}/>
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
