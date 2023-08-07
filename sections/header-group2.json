@@ -23,7 +23,7 @@
     "header2": {
       "type": "header2",
       "custom_css": [
-        ".limitedrunhoriz {height: 10px;}"
+        ".css--class1 {height: 50px; align-self: center;}"
       ],
       "settings": {
         "menu": "main-menu",
