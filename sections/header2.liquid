@@ -36,8 +36,8 @@
     margin-left: -1.2rem;
   }
 
-  {%- if section.settings.sticky_header_type == 'reduce-logo22-size' -%}
-    .scrolled-past-header .header__heading-logo22-wrapper {
+  {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
+    .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
     }
   {%- endif -%}
@@ -162,34 +162,34 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo2_position }} header--mobile-{{ section.settings.mobile_logo2_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
       endif
 
-      if section.settings.logo2_position == 'top-center' or section.settings.menu == blank
+      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
 
-    {%- if section.settings.logo2_position != 'middle-center' -%}
+    {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo2 != blank -%}
-              <div class="header__heading-logo2-wrapper">
-                {%- assign logo2_alt = settings.logo2.alt | default: shop.name | escape -%}
-                {%- assign logo2_height = settings.logo2_width | divided_by: settings.logo2.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo2_width | times: 2 }}px) 50vw, {{ settings.logo2_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo2_width }}, {{ settings.logo2_width | times: 1.5 | round }}, {{ settings.logo2_width | times: 2 }}{% endcapture %}
-                {{ settings.logo2 | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo2 motion-reduce',
+            {%- if settings.logo != blank -%}
+              <div class="header__heading-logo-wrapper">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo motion-reduce',
                   widths: widths,
-                  height: logo2_height,
-                  width: settings.logo2_width,
-                  alt: logo2_alt,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
                   sizes: sizes,
                   preload: true
                 }}
@@ -213,23 +213,23 @@
       endif
     %}
 
-    {%- if section.settings.logo2_position == 'middle-center' -%}
+    {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo2 != blank -%}
-              <div class="header__heading-logo2-wrapper">
-                {%- assign logo2_alt = settings.logo2.alt | default: shop.name | escape -%}
-                {%- assign logo2_height = settings.logo2_width | divided_by: settings.logo2.aspect_ratio -%}
-                {% capture sizes %}(min-width: 750px) {{ settings.logo2_width }}px, 50vw{% endcapture %}
-                {% capture widths %}{{ settings.logo2_width }}, {{ settings.logo2_width | times: 1.5 | round }}, {{ settings.logo2_width | times: 2 }}{% endcapture %}
-                {{ settings.logo2 | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo2',
+            {%- if settings.logo != blank -%}
+              <div class="header__heading-logo-wrapper">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo',
                   widths: widths,
-                  height: logo2_height,
-                  width: settings.logo2_width,
-                  alt: logo2_alt,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
                   sizes: sizes,
                   preload: true
                 }}
@@ -359,7 +359,7 @@
 
     connectedCallback() {
       this.header = document.querySelector('.section-header');
-      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo2-size';
+      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
       this.setHeaderHeight();
@@ -468,8 +468,8 @@
     "@context": "http://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
-    {% if settings.logo2 %}
-      "logo2": {{ settings.logo2 | image_url: width: 500 | prepend: "https:" | json }},
+    {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},
@@ -511,28 +511,28 @@
   "settings": [
     {
       "type": "select",
-      "id": "logo2_position",
+      "id": "logo_position",
       "options": [
         {
           "value": "top-left",
-          "label": "t:sections.header.settings.logo2_position.options__2.label"
+          "label": "t:sections.header.settings.logo_position.options__2.label"
         },
         {
           "value": "top-center",
-          "label": "t:sections.header.settings.logo2_position.options__3.label"
+          "label": "t:sections.header.settings.logo_position.options__3.label"
         },
         {
           "value": "middle-left",
-          "label": "t:sections.header.settings.logo2_position.options__1.label"
+          "label": "t:sections.header.settings.logo_position.options__1.label"
         },
         {
           "value": "middle-center",
-          "label": "t:sections.header.settings.logo2_position.options__4.label"
+          "label": "t:sections.header.settings.logo_position.options__4.label"
         }
       ],
       "default": "middle-left",
-      "label": "t:sections.header.settings.logo2_position.label",
-      "info": "t:sections.header.settings.logo2_help.content"
+      "label": "t:sections.header.settings.logo_position.label",
+      "info": "t:sections.header.settings.logo_help.content"
     },
     {
       "type": "link_list",
@@ -578,7 +578,7 @@
           "label": "t:sections.header.settings.sticky_header_type.options__3.label"
         },
         {
-          "value": "reduce-logo2-size",
+          "value": "reduce-logo-size",
           "label": "t:sections.header.settings.sticky_header_type.options__4.label"
         }
       ],
@@ -635,19 +635,19 @@
     },
     {
       "type": "select",
-      "id": "mobile_logo2_position",
+      "id": "mobile_logo_position",
       "options": [
         {
           "value": "center",
-          "label": "t:sections.header.settings.mobile_logo2_position.options__1.label"
+          "label": "t:sections.header.settings.mobile_logo_position.options__1.label"
         },
         {
           "value": "left",
-          "label": "t:sections.header.settings.mobile_logo2_position.options__2.label"
+          "label": "t:sections.header.settings.mobile_logo_position.options__2.label"
         }
       ],
       "default": "center",
-      "label": "t:sections.header.settings.mobile_logo2_position.label"
+      "label": "t:sections.header.settings.mobile_logo_position.label"
     },
     {
       "type": "header",

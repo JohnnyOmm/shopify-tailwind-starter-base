@@ -42,7 +42,7 @@
         "change_slides_speed": 5
       }
     },
-    "header": {
+    "header2": {
       "type": "header",
       "settings": {
         "logo_position": "top-center",
@@ -64,6 +64,6 @@
   "order": [
     "announcement-bar-trellis",
     "announcement-bar",
-    "header"
+    "header2"
   ]
 }
