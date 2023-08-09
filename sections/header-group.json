@@ -44,6 +44,9 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header__search {padding-top: 40px;}"
+      ],
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
