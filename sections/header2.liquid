@@ -167,7 +167,7 @@
       if section.settings.menu != blank
         render 'header-drawer'
       endif
-      {{ 'limitedrunhoriz.jpg' | asset_url | img_tag: 'limitedrunhoriz', 'css--class1 css--class2' | display: block }}
+
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
@@ -299,9 +299,8 @@
             {%- endform -%}
           </localization-form>
         {%- endif -%}
-        {% render 'header-search', input_id: 'Search-In-Modal' %}
       </div>
-      
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
