@@ -29,6 +29,7 @@
         ".css--class1 {padding-right: 10px; padding-top: 10px; height: 50px; align-self: center;}"
       ],
       "settings": {
+        "logo_position": "top-center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
